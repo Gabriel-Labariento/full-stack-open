@@ -4,6 +4,7 @@ sequenceDiagram
     participant server
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    server processes the data in the body of the post request
     activate server
     server-->>browser: HTTP Status Code 302 (URL Redirect)
     deactivate server
