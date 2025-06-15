@@ -3,10 +3,16 @@ sequenceDiagram
     participant browser
     participant server
 
-    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
     activate server
-    server-->>browser: HTML document
+    server-->>browser: HTTP Status Code 302 (URL Redirect)
     deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: the address notes
+    deactivate server
+    
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
     activate server
