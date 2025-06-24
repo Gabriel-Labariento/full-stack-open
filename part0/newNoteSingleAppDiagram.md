@@ -29,8 +29,10 @@ sequenceDiagram
 
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
     activate server
+    Note right of browser: The browser sends the data about the content of the note and the format of the data
+
     server-->>browser: HTTP Status Code 210 Created
     deactivate server
 
-    Note right of browser: The browser sends the data about the content of the note and the format of the data
+    
 ```
